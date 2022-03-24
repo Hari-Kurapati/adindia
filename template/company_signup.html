@@ -73,9 +73,10 @@
                 <input class="p-2 rounded-sm" type="tel" placeholder="Enter phone number" name="phone" required>
 
                 <select name="ad_catagory" class="p-2 rounded-sm">
-                    <option>-- Ad Category --</option>
-                    <option>SELECT</option>
-
+                    <option selected disabled>-- Ad Category --</option>
+                    {% for ad in Ads_catagory %}
+                    <option value="{{ad.ad_name}}">{{ad.ad_name}}</option>
+                    {% endfor %}
                 </select>
 
                 <input class="p-2 rounded-sm" type="text" placeholder="Enter ad price" name="ad_price" required>
