@@ -12,6 +12,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'output.css' %}">
+    <!-- <link rel="stylesheet" href="../dist/output.css"> -->
 
 
     <title>Ad India | Sign Up as a Seller</title>
@@ -33,7 +34,9 @@
 
             <div class="flex items-center justify-between">
                 <a class="w-[15%]" href="{% url 'home' %}">
-                    <img class="w-[100%]" src="{% static './img/logo.png' %}"></a>
+                    <img class="w-[100%]" src="{% static './img/logo.png' %}">
+                    <!-- <img class="w-[100%]" src="../img/logo.png"> -->
+                </a>
                 <ul class="flex gap-x-5 uppercase text-[13px] tracking-[2px]">
                     <li>
                         <a class="p-2 rounded-sm bg-[#f0b001bb] text-black" href="{% url 'company_signup' %}">Become A
@@ -65,11 +68,19 @@
                 <input class="w-[350px] p-2 rounded-sm" type="text" placeholder="Enter Company Name" name="company_name"
                     required>
 
-                <input placeholder="Ad category" class="p-2 rounded-sm" name="ad_catagory">
+                <input class="p-2 rounded-sm" type="email" placeholder="Enter email address" name="email" required>
+
+                <input class="p-2 rounded-sm" type="tel" placeholder="Enter phone number" name="phone" required>
+
+                <select name="ad_catagory" class="p-2 rounded-sm">
+                    <option>-- Ad Category --</option>
+                    <option>SELECT</option>
+
+                </select>
 
                 <input class="p-2 rounded-sm" type="text" placeholder="Enter ad price" name="ad_price" required>
 
-                <input class="p-2 rounded-sm" type="email" placeholder="Enter email address" name="email" required>
+
 
                 <input class="p-2 rounded-sm" type="password" placeholder="Enter password" name="password" required>
 

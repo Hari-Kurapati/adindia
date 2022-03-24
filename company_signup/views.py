@@ -1,34 +1,18 @@
 from django.shortcuts import render
-import mysql.connector as sql
 from django.contrib import messages
-
-cn=""
-ac=""
-ap=""
-email=""
-passw=""
-
+from .models import Advertisers
 
 # Create your views here.
 def signup_comp(request):
-    global cn, ac, ap, email, passw
     if request.method=="POST":
-        m=sql.connect(host="localhost",user="root",passwd="R@kib3277",database='adindia')
-        cursor=m.cursor()
-        d=request.POST
-        for key, value in d.items():
-            if key=="company_name":
-                cn = value
-            if key == "ad_catagory":
-                ac = value
-            if key == "ad_price":
-                ap = value
-            if key == "email":
-                email = value
-            if key == "password":
-                passw = value
-        c = f"insert into company_singup values (default, '{cn}', '{ac}', '{ap}', '{email}', '{passw}')"
-        cursor.execute(c)
-        m.commit()
+        company_name = request.POST.get('company_name')
+        company_phone = request.POST.get('phone')
+        company_email = request.POST.get('email')
+        company_password = request.POST.get('password')
+        ad_id = request.POST.get('ad_catagory')
+        ad_price = request.POST.get('ad_price')
+
+        obj = Advertisers(company_name=company_name, company_phone=company_phone, company_email=company_email, company_password=company_password, ad_id=ad_id, ad_price=ad_price)
+        obj.save()
         messages.success(request, 'You are successfully registerted')
     return render(request, "company_signup.html")
