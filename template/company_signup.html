@@ -86,9 +86,6 @@
                 <input class="p-2 rounded-sm" type="password" placeholder="Enter password" name="password" required>
 
                 <button class="bg-[#f0b001bb] p-2" type="submit">SIGN UP</button>
-                {% for msg in messages%}
-                <p style="color: white;">{{msg}}</p>
-                {% endfor %}
                 <span class="text-white">Already have an account? <a class="underline"
                         href="{% url 'company_signin' %}">Login</a></span>
             </div>

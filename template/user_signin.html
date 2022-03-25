@@ -64,9 +64,6 @@
 
                 <button class="bg-[#f0b001bb] p-2" type="submit">SIGN IN</button>
                 <span class="text-white">New here? <a class="underline" href="{% url 'user_signup' %}">Create An Account</a></span>
-                {% for msg in messages%}
-                <p style="color: white;">{{msg}}</p>
-                {% endfor %}
             </form>
         </div>
 
