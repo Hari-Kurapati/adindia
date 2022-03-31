@@ -573,6 +573,11 @@ body {
   row-gap: 2.5rem;
 }
 
+.gap-x-3 {
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }

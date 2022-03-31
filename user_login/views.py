@@ -12,8 +12,9 @@ def user_login(request):
 
         t = tuple(Users.objects.raw(query))
         if t==():
+            
             messages.success(request, "Incorrect email address or password")
         else:
-            return render(request, 'welcome.html')
+            return render(request, 'user_purchase.html', {'user': Users.objects.get(user_email=user_email)})
 
     return render(request, "user_signin.html")

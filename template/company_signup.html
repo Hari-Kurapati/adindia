@@ -75,7 +75,7 @@
                 <select name="ad_catagory" class="p-2 rounded-sm">
                     <option selected disabled>-- Ad Category --</option>
                     {% for ad in Ads_catagory %}
-                    <option value="{{ad.ad_name}}">{{ad.ad_name}}</option>
+                    <option value={{ad.ad_name}}>{{ad.ad_name}}</option>
                     {% endfor %}
                 </select>
 

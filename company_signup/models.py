@@ -14,7 +14,8 @@ class Advertisers(models.Model):
     company_email = models.CharField(max_length=50, unique=True)
     company_password = models.CharField(max_length=50)
     ad_price = models.IntegerField()
-    ad_id = models.ForeignKey('Ads_catagory', on_delete=models.CASCADE)
+    # ad_name = models.ForeignKey(Ads_catagory, on_delete=models.CASCADE)
+    ad_name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.company_name

@@ -12,7 +12,7 @@ class AdvertisersAdmin(admin.ModelAdmin):
     'company_phone',
     'company_email', 
     'ad_price',
-    'ad_id']
+    'ad_name']
 
 
 admin.site.register(Advertisers, AdvertisersAdmin)
