@@ -16,5 +16,4 @@ def signup_comp(request):
 
         obj = Advertisers(company_name=company_name, company_phone=company_phone, company_email=company_email, company_password=company_password, ad_name=ad_name, ad_price=ad_price)
         obj.save()
-        messages.success(request, 'You are successfully registerted')
     return render(request, "company_signup.html", {"Ads_catagory": display_catagory})

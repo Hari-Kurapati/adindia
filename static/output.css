@@ -485,6 +485,10 @@ body {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -515,6 +519,15 @@ body {
 
 .w-\[500px\] {
   width: 500px;
+}
+
+.table-auto {
+  table-layout: auto;
+}
+
+.scroll-px-2 {
+  scroll-padding-left: 0.5rem;
+  scroll-padding-right: 0.5rem;
 }
 
 .grid-cols-2 {
@@ -582,6 +595,10 @@ body {
   border-radius: 0.125rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .bg-\[\#f0b001bb\] {
   background-color: #f0b001bb;
 }
@@ -602,6 +619,11 @@ body {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .pt-1 {

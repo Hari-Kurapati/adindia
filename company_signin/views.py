@@ -15,6 +15,7 @@ def company_signin(request):
         if t==():
             messages.success(request, "Incorrect email address or password")
         else:
+            print(t)
             return render(request, 'company_product.html', {'company': Advertisers.objects.get(company_email=email)})
 
     return render(request, 'company_signin.html')

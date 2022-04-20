@@ -10,6 +10,11 @@
     <!-- Remix ICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'output.css' %}">
     <!-- <link rel="stylesheet" href="../dist/output.css"> -->
@@ -23,28 +28,35 @@
         <nav class="flex items-center justify-between">
             <a class="w-[15%]" href="{% url 'home' %}">
                 <img class="w-[100%]" src="{% static 'img/logo.png' %}"></a>
-                <!-- <img class="w-[100%]" src="../img/logo.png"></a> -->
+            <!-- <img class="w-[100%]" src="../img/logo.png"></a> -->
             <ul class="flex gap-x-5 uppercase text-[13px] tracking-[2px]">
-                <li class="p-2 rounded-sm bg-[#f0b001bb] text-black">{{company}}</li>
+                <li class="p-2 rounded-sm bg-[#f0b001bb] text-black">{{company.company_name}}</li>
             </ul>
         </nav>
 
         <div class="flex items-center justify-around">
-            <div class="flex gap-x-3 bg-[#f0b00127] px-7 py-10 rounded-sm text-black">
 
-                <select name="ad_catagory" class="p-2 rounded-sm">
-                    <option>-- Ads --</option>
-                    <option>SELECT</option>
-                </select>
+            <table class="container table table-dark table-sm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Ad Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{company.company_name}}</td>
+                        <td>{{company.company_email}}</td>
+                        <td>{{company.company_phone}}</td>
+                        <td>{{company.ad_name}}</td>
+                        <td>{{company.ad_price}}</td>
 
-                <!-- <select name="ad_catagory" class="p-2 rounded-sm">
-                    <option>-- Offered By --</option>
-                    <option>SELECT</option>
-                </select> -->
-
-
-                <button class="bg-[#f0b001bb] p-2" type="submit">Purchase</button>
-            </div>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <footer class="flex justify-between">
@@ -57,6 +69,11 @@
             </div>
         </footer>
     </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>
